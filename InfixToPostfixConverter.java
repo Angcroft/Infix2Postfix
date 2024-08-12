@@ -6,7 +6,7 @@ public class InfixToPostfixConverter {
         Stack<Character> stack = new Stack<>();
         StringBuilder postfix = new StringBuilder();
 
-        expression = expression.replaceAll("\\s+", ""); // Eliminar espacios en blanco
+        expression = expression.replaceAll("\\s+", ""); // Delete white spaces
 
         for (int i = 0; i < expression.length(); i++) {
             char currentChar = expression.charAt(i);
@@ -22,7 +22,7 @@ public class InfixToPostfixConverter {
                 if (stack.isEmpty() || stack.peek() != '(') {
                     throw new IllegalArgumentException("Disbalanced parenthesis in expression.");
                 }
-                stack.pop(); // Remover el '('
+                stack.pop(); // Delete '('
             } else if (OperatorUtils.isOperator(currentChar)) {
                 while (!stack.isEmpty() && OperatorUtils.precedence(currentChar) <= OperatorUtils.precedence(stack.peek())) {
                     postfix.append(stack.pop());

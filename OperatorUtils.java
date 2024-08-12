@@ -1,6 +1,6 @@
 public class OperatorUtils {
 
-    // Determina la precedencia de los operadores
+    // Determines operator precedence
     public static int precedence(char operator) {
         switch (operator) {
             case '+':
@@ -16,7 +16,7 @@ public class OperatorUtils {
         }
     }
 
-    // Verifica si un carácter es un operador
+    // Verifies if character is an operator
     public static boolean isOperator(char c) {
         return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
     }
